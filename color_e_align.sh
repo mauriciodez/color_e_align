@@ -2,30 +2,25 @@
 
 ##### NOME:				color_e_align.sh
 ##### VERSÃO:			1.0
-##### DESCRIÇÃO:	 	Formata texto ao centro da tela e colorido
-##### DATA DA CRIAÇÃO:	18/11/2018
+##### DESCRIÇÃO:	 	Alinha o Texto ao centro da tela e da cor ao mesmo
+##### DATA DA CRIAÇÃO:	20/11/2018
 ##### ESCRITO POR:		Maurício G. Paiva
 ##### E-MAIL:			mauricimgp@gmail.com
 ##### DISTRO:			Debian GNU/Linux 8.11
 ##### LICENÇA:			GPLv3
-##### PROJETO:			https://github.com/mauriciodez/color-e-align
+##### PROJETO:			https://github.com/mauriciodez/color_e_align.git
 
-
-vermelho ()	{
-# Captutura o Texto.
-txt=$@
-
-# Diminui a quantidade de caracteres do texto do numero de colunas da tela e divide por 2.
+SET ()	{
 qtde=$(( ( `tput cols` - `echo -n $txt | wc -c` ) / 2 ))
-
-# especifica os "espaços" na tela.
 esp=$(for ((X=0;X<=qtde;X++)) { echo -n " " ; })
+echo -e "\n\033[1;$cor$esp$txt\033[0m\n"
+		}
 
-# Formata a saída.
-# Nessa Configuração está para: Linha em branco + texto vermelho [negrito] + Linha em branco !!!
-echo -e "\n\033[1;31m$esp$txt\033[0m\n"
-
-			}
-
-#Exemplo de uso
-vermelho "Esse Script é bem legal !!!"
+preto 		()	{ txt=$@;cor="30m";SET; }
+vermelho 	()	{ txt=$@;cor="31m";SET; }
+verde 		()	{ txt=$@;cor="32m";SET; }
+amarelo		()	{ txt=$@;cor="33m";SET; }
+azul 		()	{ txt=$@;cor="34m";SET; }
+purple 		()	{ txt=$@;cor="35m";SET; }
+cyan 		()	{ txt=$@;cor="36m";SET; }
+branco 		()	{ txt=$@;cor="37m";SET; }

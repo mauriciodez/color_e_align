@@ -1,28 +1,39 @@
 ## Script para centralizar o texto ao centro da tela e colorir
 
-- V1.0 >>> 18 de Novembro de 2018
+- V1.0 >>> 19 de Novembro de 2018
 
 *** NOTA
-
-- Suporte
-
-Todas cores e atributos suportados pelo shell script, vide exemplos:
-
-https://www.vivaolinux.com.br/dica/Shell-script-com-texto-colorido
 
 Exemplos de uso:
 
 *** No próprio Script:
 
 #####################################################
-vermelho "Esse script é muito legal !!!"
+preto		"preto"
+vermelho	"vermelho"
+verde		"verde"
+amarelo		"amarelo"
+azul		"azul"
+purple		"purple"
+cyan		"cyan"
+branco		"branco"
 #####################################################
 
 em outro script:
 
 #####################################################
+#!/bin/bash
+
 source /caminho/do/script/color_e_align.sh
-vermelho "Esse script é muito legal !!!"
+
+preto		"preto"
+vermelho	"vermelho"
+verde		"verde"
+amarelo		"amarelo"
+azul		"azul"
+purple		"purple"
+cyan		"cyan"
+branco		"branco"
 #####################################################
 
 
